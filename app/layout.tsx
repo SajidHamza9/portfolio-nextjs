@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: "Hamza Sajid",
     type: "website",
     description,
-    images: ["/images/img1.png"],
     url: "https://www.sajidhamza.live",
   },
 };

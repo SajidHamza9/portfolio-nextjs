@@ -25,8 +25,9 @@ const Intro = () => {
           <div>
             <OutlinedButton
               data-aos="fade-right"
-              href="https://drive.google.com/file/d/1ZTFsE8EYdb2e8eE9KSAZF_Qfn1PwA_0t/view?usp=sharing"
+              href="/resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
             >
               view resume
             </OutlinedButton>

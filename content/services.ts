@@ -4,7 +4,8 @@ export const services: Service[] = [
   {
     title: "Web Development",
     description:
-      "Powerful and modern website solutions with a strong architecture using the MERN stack / Serverless.",
+      "Powerful and modern web applications built with JavaScript & TypeScript (React, Angular, Node.js) on a robust, scalable architecture.",
+
     image: "/images/services/web.svg",
   },
   {

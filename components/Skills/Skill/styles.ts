@@ -22,14 +22,17 @@ export const Card = styled.div`
       width: 40px;
     }
   }
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+  -webkit-box-shadow:
+    0px 10px 13px -7px #000000,
     0px 0px 6px 0px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 6px 0px rgba(0, 0, 0, 0);
+  box-shadow:
+    0px 10px 13px -7px #000000,
+    0px 0px 6px 0px rgba(0, 0, 0, 0);
 `;
 
 export const Name = styled.h6`
   color: ${({ theme }) => theme.textColor};
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   text-align: center;
   @media (max-width: 400px) {

@@ -7,10 +7,13 @@ export const skills: Skill[] = [
   { title: "React", image: "/images/skills/react.svg" },
   { title: "Gatsby", image: "/images/skills/gatsby.svg" },
   { title: "Next.js", image: "/images/skills/nextjs.svg" },
-  { title: "Serverless", image: "/images/skills/serverless.svg" },
-  { title: "AWS", image: "/images/skills/aws.svg" },
-  { title: "Graphql", image: "/images/skills/graphql.svg" },
-  { title: "Material UI", image: "/images/skills/material-ui.svg" },
   { title: "NestJS", image: "/images/skills/nestjs.svg" },
   { title: "Angular", image: "/images/skills/angular.svg" },
+  { title: "Docker", image: "/images/skills/docker.svg" },
+  {
+    title: "Github Actions - CI/CD",
+    image: "/images/skills/github_actions.svg",
+  },
+  { title: "AWS", image: "/images/skills/aws.svg" },
+  { title: "Claude Code", image: "/images/skills/claude-code.svg" },
 ];

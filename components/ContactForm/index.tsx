@@ -37,7 +37,11 @@ const ContactFormInner = () => {
           Want to get connected? Follow me on the social channels below.
         </Text>
         <Flex>
-          <a href="https://www.instagram.com/7amza.hs/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/sajidhaamza/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
           <a

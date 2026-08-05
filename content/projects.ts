@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "My personal website was created in order to have an online presence and boost my online visibility.",
     demo: "https://www.sajidhamza.live/",
-    tags: ["react", "styled-components", "gatsby", "graphql", "material UI", "vercel"],
+    tags: ["react", "styled-components", "next.js", "vercel"],
     animation: "fade-right",
   },
   {
@@ -45,7 +45,14 @@ export const projects: Project[] = [
     description:
       "Design, development and deployment of an event website 5G EVENT MOROCCO.",
     demo: "https://www.5geventmorocco.com/",
-    tags: ["react", "material UI", "styled-components", "node.js", "mongoDB", "CMI"],
+    tags: [
+      "react",
+      "material UI",
+      "styled-components",
+      "node.js",
+      "mongoDB",
+      "CMI",
+    ],
     animation: "fade-right",
   },
   {
