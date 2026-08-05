@@ -6,6 +6,7 @@ export const projects: Project[] = [
     image: "/images/projects/pw.png",
     description:
       "My personal website was created in order to have an online presence and boost my online visibility.",
+    github: "https://github.com/SajidHamza9/portfolio-nextjs",
     demo: "https://www.sajidhamza.live/",
     tags: ["react", "styled-components", "next.js", "vercel"],
     animation: "fade-right",
