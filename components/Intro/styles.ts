@@ -1,5 +1,25 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Container } from "@/components/common/Container";
+
+const wave = keyframes`
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+`;
+
+export const Wave = styled.span`
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: ${wave} 2.2s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
 
 export const StyledAvatar = styled.img`
   border: 3px solid ${({ theme }) => theme.primaryColor};

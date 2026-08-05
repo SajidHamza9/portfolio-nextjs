@@ -7,6 +7,7 @@ import {
   Section,
   StyledContainer,
   Text,
+  Wave,
   BtnRow,
   ContainedButton,
   OutlinedButton,
@@ -18,7 +19,8 @@ const Intro = () => {
       <StyledContainer $maxWidth="md">
         <StyledAvatar data-aos="fade-down" alt="image" src="/images/me3.jpeg" />
         <Text data-aos="zoom-in">
-          Hello&#128075;, I&apos;m <span>HAMZA SAJID</span>. <br />
+          Hello<Wave aria-label="waving hand" role="img">&#128075;</Wave>, I&apos;m{" "}
+          <span>HAMZA SAJID</span>. <br />
           I&apos;m a Full Stack Developer.
         </Text>
         <BtnRow>
