@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import Providers from "./providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const description = "Hello, I'm Hamza Sajid, I'm a Full Stack Developer.";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             {children}
+            <Analytics />
             <Footer />
           </Providers>
         </StyledComponentsRegistry>
