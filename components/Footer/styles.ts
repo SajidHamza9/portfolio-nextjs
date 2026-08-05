@@ -5,7 +5,7 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem;
   background-image: linear-gradient(180deg, #202646 0%, #111233 100%);
 `;
 

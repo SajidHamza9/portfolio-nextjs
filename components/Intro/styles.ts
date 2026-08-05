@@ -44,7 +44,10 @@ export const OutlinedButton = styled.a`
 
 export const Section = styled.section`
   overflow: hidden;
-  background-color: ${({ theme }) => theme.bgColor};
+  /* Transparent so the fixed ParticlesBackground shows through the hero.
+     bgColor equals the body background, so this looks identical apart
+     from revealing the constellation behind the content. */
+  background-color: transparent;
   height: 100vh;
   position: relative;
 `;

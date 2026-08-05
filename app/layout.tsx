@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import Providers from "./providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/ParticlesBackground";
 import { Analytics } from "@vercel/analytics/next";
 
 const description = "Hello, I'm Hamza Sajid, I'm a Full Stack Developer.";
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
           <Providers>
+            <ParticlesBackground />
             <Navbar />
             {children}
             <Analytics />
