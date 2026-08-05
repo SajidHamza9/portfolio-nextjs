@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "My personal website was created in order to have an online presence and boost my online visibility.",
     github: "https://github.com/SajidHamza9/portfolio-nextjs",
-    demo: "https://www.sajidhamza.live/",
+    demo: "https://www.sajidhamza.dev/",
     tags: ["react", "styled-components", "next.js", "vercel"],
     animation: "fade-right",
   },

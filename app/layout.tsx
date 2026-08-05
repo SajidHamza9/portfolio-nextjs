@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 const description = "Hello, I'm Hamza Sajid, I'm a Full Stack Developer.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sajidhamza.live"),
+  metadataBase: new URL("https://www.sajidhamza.dev"),
   title: "Hamza Sajid",
   description,
   keywords: ["portfolio", "web development", "mobile development", "design"],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Hamza Sajid",
     type: "website",
     description,
-    url: "https://www.sajidhamza.live",
+    url: "https://www.sajidhamza.dev",
   },
 };
 
