@@ -5,16 +5,25 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { Formik, Form } from "formik";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 import { Container } from "@/components/common/Container";
 import Title from "@/components/common/Title";
 import Section from "@/components/common/Section";
+import { sendContact } from "@/app/actions/contact";
 import InputField from "./InputField";
 import { validate } from "./validation";
-import { Text, Flex, Center, Button } from "./styles";
+import { Text, Flex, Center, Button, Disclaimer } from "./styles";
 
-const ContactForm = () => {
+const toastOptions = { position: "bottom-center" as const };
+
+const ContactFormInner = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   return (
-    <Section sectionId="contact">
+    <>
       <Container $maxWidth="lg">
         <Title>Contact Me</Title>
       </Container>
@@ -53,27 +62,83 @@ const ContactForm = () => {
             message: "",
           }}
           validationSchema={validate}
-          onSubmit={(values, actions) => {
-            console.log("Contact form submission:", values);
-            toast.success("Thanks! Your message has been logged to the console.", {
-              position: "bottom-center",
-            });
-            actions.resetForm();
+          onSubmit={async (values, actions) => {
+            try {
+              if (!executeRecaptcha) {
+                toast.error(
+                  "reCAPTCHA is not ready yet. Please try again in a moment.",
+                  toastOptions,
+                );
+                return;
+              }
+              const token = await executeRecaptcha("contact");
+              const res = await sendContact(values, token);
+              if (res.ok) {
+                toast.success(
+                  "Thanks! Your message has been sent.",
+                  toastOptions,
+                );
+                actions.resetForm();
+              } else {
+                toast.error(res.error, toastOptions);
+              }
+            } catch {
+              toast.error(
+                "Something went wrong. Please email me directly.",
+                toastOptions,
+              );
+            } finally {
+              actions.setSubmitting(false);
+            }
           }}
         >
-          <Form>
-            <InputField label="Name" name="name" type="text" />
-            <InputField label="Email" name="email" type="email" />
-            <InputField label="Message" isTextArea name="message" />
-            <Center>
-              <Button type="submit">Send Now</Button>
-            </Center>
-          </Form>
+          {({ isSubmitting }) => (
+            <Form>
+              <InputField label="Name" name="name" type="text" />
+              <InputField label="Email" name="email" type="email" />
+              <InputField label="Message" isTextArea name="message" />
+              <Center>
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Now"}
+                </Button>
+              </Center>
+              <Disclaimer>
+                This site is protected by reCAPTCHA and the Google{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Terms of Service
+                </a>{" "}
+                apply.
+              </Disclaimer>
+            </Form>
+          )}
         </Formik>
       </Container>
       <ToastContainer />
-    </Section>
+    </>
   );
 };
+
+const ContactForm = () => (
+  <Section sectionId="contact">
+    <GoogleReCaptchaProvider
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+      scriptProps={{ async: true, defer: true, appendTo: "body" }}
+    >
+      <ContactFormInner />
+    </GoogleReCaptchaProvider>
+  </Section>
+);
 
 export default ContactForm;

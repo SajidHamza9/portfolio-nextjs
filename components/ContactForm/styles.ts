@@ -84,6 +84,23 @@ export const Button = styled(ContainedButton)`
   box-shadow: none;
   font-size: 0.8rem;
   padding: 1.1rem 1.5rem;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;
+
+export const Disclaimer = styled.p`
+  color: ${({ theme }) => theme.textColor};
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0.7;
+
+  a {
+    color: ${({ theme }) => theme.primaryColor};
+  }
 `;
 
 export const Error = styled.div`
