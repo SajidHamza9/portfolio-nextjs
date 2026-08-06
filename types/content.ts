@@ -3,7 +3,10 @@ export interface About {
   email: string;
   tel: string;
   address: string;
-  photos: string[];
+  photo: string;
+  github: string;
+  linkedin: string;
+  certifications: string[];
 }
 
 export type ProjectCategory = "web app" | "mobile app" | "open source";
