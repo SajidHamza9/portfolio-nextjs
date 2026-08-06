@@ -31,4 +31,10 @@ body {
     font-size: 14px;
   }
 }
+
+/* Hide the reCAPTCHA v3 badge. Google's terms allow this as long as the
+   reCAPTCHA branding is disclosed in the UI — see the Disclaimer in ContactForm. */
+.grecaptcha-badge {
+  visibility: hidden;
+}
 `;
