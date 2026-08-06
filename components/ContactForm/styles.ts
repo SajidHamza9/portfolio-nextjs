@@ -82,8 +82,14 @@ export const Center = styled.div`
 export const Button = styled(ContainedButton)`
   width: fit-content;
   box-shadow: none;
-  font-size: 0.8rem;
-  padding: 1.1rem 1.5rem;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: none;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  &:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 18px -4px ${({ theme }) => theme.primaryColor};
+  }
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;

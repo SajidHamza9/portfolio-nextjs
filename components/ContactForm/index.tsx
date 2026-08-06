@@ -103,7 +103,7 @@ const ContactFormInner = () => {
               <InputField label="Message" isTextArea name="message" />
               <Center>
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Now"}
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </Button>
               </Center>
               <Disclaimer>
