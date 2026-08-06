@@ -6,14 +6,17 @@ export interface About {
   photos: string[];
 }
 
+export type ProjectCategory = "web app" | "mobile app" | "open source";
+
 export interface Project {
   title: string;
   image: string;
   description: string;
+  category: ProjectCategory;
   demo?: string;
   github?: string;
   tags: string[];
-  animation: "fade-right" | "fade-left";
+  animation: "fade-right" | "fade-left" | "fade-up";
 }
 
 export interface Service {
