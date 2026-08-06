@@ -23,6 +23,7 @@ const Navbar = () => {
       <MenuList onClick={() => setOpen(!open)} $open={open}>
         <MenuItem onClick={() => scrollTo("#home")}>Home</MenuItem>
         <MenuItem onClick={() => scrollTo("#about")}>About</MenuItem>
+        <MenuItem onClick={() => scrollTo("#experience")}>Experience</MenuItem>
         <MenuItem onClick={() => scrollTo("#skills")}>Skills</MenuItem>
         <MenuItem onClick={() => scrollTo("#services")}>Services</MenuItem>
         <MenuItem onClick={() => scrollTo("#projects")}>Projects</MenuItem>

@@ -26,3 +26,13 @@ export interface Skill {
   title: string;
   image: string;
 }
+
+export interface Experience {
+  role: string;
+  company: string;
+  type: string;
+  period: string;
+  location: string;
+  description: string;
+  tags: string[];
+}
