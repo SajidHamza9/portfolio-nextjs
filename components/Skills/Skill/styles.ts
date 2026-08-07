@@ -1,41 +1,51 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  background-image: linear-gradient(180deg, #202646 0%, #111233 100%);
-  height: 120px;
-  border-radius: 5px;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  transition: all 0.3s ease-in-out;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.primaryColor}0d;
+  border: 1px solid ${({ theme }) => theme.primaryColor}1f;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease, background-color 0.25s ease;
+
   &:hover {
-    transform: translateY(-10px);
-  }
-  @media (max-width: 400px) {
-    height: 100px;
+    transform: translateY(-4px);
+    background: ${({ theme }) => theme.primaryColor}14;
+    border-color: ${({ theme }) => theme.primaryColor}66;
+    box-shadow: 0 12px 24px -12px ${({ theme }) => theme.primaryColor}59;
   }
 
   img {
-    width: 60px;
-    @media (max-width: 400px) {
-      width: 40px;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+    &:hover {
+      transform: none;
+    }
+    &:hover img {
+      transform: none;
     }
   }
-  -webkit-box-shadow:
-    0px 10px 13px -7px #000000,
-    0px 0px 6px 0px rgba(0, 0, 0, 0);
-  box-shadow:
-    0px 10px 13px -7px #000000,
-    0px 0px 6px 0px rgba(0, 0, 0, 0);
 `;
 
-export const Name = styled.h6`
+export const Name = styled.span`
   color: ${({ theme }) => theme.textColor};
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  text-align: center;
-  @media (max-width: 400px) {
-    font-size: 1rem;
-  }
+  line-height: 1.2;
 `;

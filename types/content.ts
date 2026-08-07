@@ -28,9 +28,17 @@ export interface Service {
   image: string;
 }
 
+export type SkillCategory =
+  | "Languages"
+  | "Frontend"
+  | "Backend"
+  | "DevOps & Cloud"
+  | "Tools";
+
 export interface Skill {
   title: string;
   image: string;
+  category: SkillCategory;
 }
 
 export interface Experience {
