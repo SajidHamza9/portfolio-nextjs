@@ -12,7 +12,7 @@ export const StyledTitle = styled.div`
   width: fit-content;
   margin-bottom: 4rem;
 
-  h1 {
+  h2 {
     color: #fff;
     font-size: 1.35rem;
     font-weight: 600;

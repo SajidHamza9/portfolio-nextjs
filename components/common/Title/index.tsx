@@ -6,7 +6,7 @@ import { StyledTitle } from "./styles";
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
     <StyledTitle>
-      <h1>{children}</h1>
+      <h2>{children}</h2>
     </StyledTitle>
   );
 };

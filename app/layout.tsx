@@ -7,21 +7,53 @@ import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { Analytics } from "@vercel/analytics/next";
 
-const description = "Hello, I'm Hamza Sajid, I'm a Full Stack Developer.";
+const siteUrl = "https://www.sajidhamza.dev";
+const description =
+  "Hamza Sajid is a Full Stack Software Engineer specialized in JavaScript & TypeScript, building modern web applications backed by solid cloud infrastructure. AWS Certified Developer and DevOps Engineer.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sajidhamza.dev"),
-  title: "Hamza Sajid",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Hamza Sajid — Full Stack Software Engineer",
+    template: "%s | Hamza Sajid",
+  },
   description,
-  keywords: ["portfolio", "web development", "mobile development", "design"],
+  keywords: [
+    "Hamza Sajid",
+    "Full Stack Developer",
+    "Full Stack Software Engineer",
+    "JavaScript developer",
+    "TypeScript developer",
+    "React developer",
+    "Next.js developer",
+    "Node.js developer",
+    "AWS Certified Developer",
+    "web development",
+    "cloud infrastructure",
+    "portfolio",
+  ],
+  authors: [{ name: "Hamza Sajid", url: siteUrl }],
+  creator: "Hamza Sajid",
+  publisher: "Hamza Sajid",
+  category: "technology",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Hamza Sajid",
+    title: "Hamza Sajid — Full Stack Software Engineer",
+    siteName: "Hamza Sajid",
     type: "website",
+    locale: "en_US",
     description,
-    url: "https://www.sajidhamza.dev",
+    url: siteUrl,
+    images: [
+      {
+        url: "/images/og.png",
+        width: 1907,
+        height: 957,
+        alt: "Hamza Sajid — Full Stack Software Engineer",
+      },
+    ],
   },
 };
 

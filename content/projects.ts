@@ -3,7 +3,7 @@ import type { Project } from "@/types/content";
 export const projects: Project[] = [
   {
     title: "My personal website",
-    image: "/images/projects/pw.png",
+    image: "/images/og.png",
     description:
       "A personal portfolio built to establish my online presence and showcase my work and background.",
     category: "web app",
