@@ -14,8 +14,14 @@ const Services = () => {
       <Container $maxWidth="lg">
         <Title>Services</Title>
         <Grid>
-          {services.map((service) => (
-            <Service key={service.title} {...service} />
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              data-aos="fade-up"
+              data-aos-delay={index * 80}
+            >
+              <Service {...service} index={index} />
+            </div>
           ))}
         </Grid>
       </Container>

@@ -2,17 +2,33 @@
 
 import React from "react";
 import type { Service as ServiceType } from "@/types/content";
-import { Flex, Title, Description, Wrapper } from "./styles";
+import {
+  Card,
+  Index,
+  IconChip,
+  Title,
+  Description,
+  FeatureList,
+  Feature,
+} from "./styles";
 
-const Service = ({ image, description, title }: ServiceType) => {
+type ServiceProps = ServiceType & { index: number };
+
+const Service = ({ image, description, title, features, index }: ServiceProps) => {
   return (
-    <Flex>
-      <Wrapper>
+    <Card>
+      <Index>{String(index + 1).padStart(2, "0")}</Index>
+      <IconChip>
         <img src={image} alt={title} />
-      </Wrapper>
+      </IconChip>
       <Title>{title}</Title>
       <Description>{description}</Description>
-    </Flex>
+      <FeatureList>
+        {features.map((feature) => (
+          <Feature key={feature}>{feature}</Feature>
+        ))}
+      </FeatureList>
+    </Card>
   );
 };
 
